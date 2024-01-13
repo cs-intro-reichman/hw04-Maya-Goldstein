@@ -22,17 +22,17 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String str = "MMMM";
-        char a = 'M';
+        String str = "   welCome  tO my HoMe ";
+        //char a = 'M';
         //System.out.println("test of first function: " + capVowelsLowRest(str));
         //System.out.println("test of camel case: " + camelCase(str));
-        //System.out.println("test of updated input for camel case: " + checkInput(str));
-        int[] array = allIndexOf(str, a);
-        System.out.print("{");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println("}");
+        System.out.println("test of updated input for camel case: " + checkInput(str));
+        //int[] array = allIndexOf(str, a);
+        //System.out.print("{");
+        //for (int i = 0; i < array.length; i++) {
+            //System.out.print(array[i] + " ");
+        //}
+        //System.out.println("}");
 
         
     }
@@ -66,14 +66,22 @@ public class StringOps {
     public static String checkInput (String string) {
         String newStr = "";
         char chr = string.charAt(0), nextChr;
-        int i = 0;
+        int i = 0, end = string.length() - 1;
+        char lastChr = string.charAt(end);
 
+        //deletes extra spaces at the begining of the string
         while (chr == ' ') {
             i++;
             chr = string.charAt(i);
         }
 
-        for (int j = i; j < string.length(); j++) {
+        //deletes extra spaces at the end of the string
+        while (lastChr == ' ') {
+            end--;
+            lastChr = string.charAt(end);
+        }
+
+        for (int j = i; j <= end; j++) {
             chr = string.charAt(j);
             if (chr != ' ')
                 newStr += chr;
