@@ -69,13 +69,13 @@ public class StringOps {
         int i = 0, end = string.length() - 1;
         char lastChr = string.charAt(end);
 
-        //deletes extra spaces at the begining of the string
+        //skips the extra spaces at the begining of the string
         while (chr == ' ') {
             i++;
             chr = string.charAt(i);
         }
 
-        //deletes extra spaces at the end of the string
+        //skips the extra spaces at the end of the string
         while (lastChr == ' ') {
             end--;
             lastChr = string.charAt(end);
